@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: utf8
-  database: portfolio_development
+  database: portfolio_deux_development
   pool: 5
 
 test: &TEST
