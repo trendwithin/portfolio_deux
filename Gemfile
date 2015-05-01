@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'codeclimate-test-reporter'
+gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'coffee-rails', '~> 4.1.0'
 gem 'eefgilm'
 gem 'figaro'
@@ -18,6 +18,7 @@ group :development, :test do
   gem 'spring'
   gem 'web-console', '~> 2.0'
   gem 'guard'
+  gem 'guard-minitest'
 end
 
 group :test do
