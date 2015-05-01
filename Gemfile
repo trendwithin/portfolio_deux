@@ -18,6 +18,7 @@ group :development, :test do
   gem 'spring'
   gem 'web-console', '~> 2.0'
   gem 'guard'
+  gem 'guard-minitest'
 end
 
 group :test do
