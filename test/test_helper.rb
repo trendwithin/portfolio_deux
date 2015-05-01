@@ -7,7 +7,11 @@ require "minitest/rails"
 require "minitest/pride"
 require "minitest/reporters"
 require "minitest/rails/capybara"
+require "capybara/poltergeist"
 
+Capybara.javascript_driver = :poltergeist
+
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class ActiveSupport::TestCase
     ActiveRecord::Migration.check_pending!
