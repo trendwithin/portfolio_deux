@@ -11,6 +11,6 @@ Stage 1:  Set up working environment and tools.
 
 Tools:
 --
-* Codeship
+* Code Climate
 * Waffle
 * Heroku deploy
