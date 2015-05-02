@@ -12,5 +12,6 @@ feature "List Projects" do
   scenario "Visitor to Home Page Sees Listing of Projects" do
     visit root_path
     page.must_have_content "Crummy"
+    page.must_have_content "Thundrs"
   end
 end
