@@ -1,0 +1,14 @@
+portfolio:
+  title: My Portfolio
+  technologies: Rails 4.2.1 CodeShip Code Climate
+  description: Personal home page to show my current and past working projects.
+
+thundrs:
+  title: Thundrs
+  technologies: Rails 4.2.1 Zurb Foundation CodeShip Code Climate AWS
+  description: Connecting users through past experience.  Memory depository.
+
+crummy:
+  title: Crummy
+  technologies: Rails 4.2.1 AngularJS
+  description: App to track family medical history.
