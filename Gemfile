@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'coffee-rails', '~> 4.1.0'
