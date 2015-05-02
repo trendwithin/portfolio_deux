@@ -3,12 +3,16 @@
 <head>
   <title>PortfolioDeux</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<%= render "home/header" %>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8"><%= yield %></div>
+  <div class="col-xs-6 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis atque in esse quos rerum iure, perspiciatis eligendi accusantium ea odit! Molestiae tenetur, dolore. Harum consectetur, ad tenetur incidunt voluptatibus nihil!  </div>
+</div>
 
 </body>
 </html>
