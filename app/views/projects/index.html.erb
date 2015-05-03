@@ -1,31 +1,28 @@
 <p id="notice"><%= notice %></p>
-
-<h1>My Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Technologies</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
+  <div class="col-xs-9 col-md-8">
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.technologies %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= project.title %></h3>
+        </div>
+        <div class="panel-body">
+          <strong>Technologies Used:</strong><br />
+          <%= project.technologies %> <br /><br />
+          <strong>Description:</strong> <br />
+          <p><%= project.description %></p><br />
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
+  </div>
+  <div class="col-xs-3 col-md-4">
+    <p>My Projects: A collection of major projects that I have completed, worked on,
+    or am in the process of developing.  A brief description of the tenhnologies used
+    as well as a general purpose description of my general role, participation, and lessons
+    learned.  For projects I am tinkering with please visit my github...</P>
+  </div>
+</div>
 <%= link_to 'New Project', new_project_path %>
+
+
+
