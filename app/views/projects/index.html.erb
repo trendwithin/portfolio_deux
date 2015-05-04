@@ -12,17 +12,24 @@
           <strong>Description:</strong> <br />
           <p><%= project.description %></p><br />
         </div>
+        <div class="panel-footer">
+          <%= link_to 'Show', project %>
+          <%= link_to 'Edit', edit_project_path(project) %>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
       </div>
     <% end %>
   </div>
   <div class="col-xs-3 col-md-4">
+    <% if policy(Project).new?  %>
+      <%= link_to 'New Project', new_project_path %>
+    <% end %>
     <p>My Projects: A collection of major projects that I have completed, worked on,
     or am in the process of developing.  A brief description of the tenhnologies used
     as well as a general purpose description of my general role, participation, and lessons
     learned.  For projects I am tinkering with please visit my github...</P>
   </div>
 </div>
-<%= link_to 'New Project', new_project_path %>
 
 
 
