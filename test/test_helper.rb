@@ -31,3 +31,10 @@ def sign_in_admin
   fill_in "Password", with: 'password'
   click_on "Log in"
 end
+
+# Test ProjectPolicy against Non-Authorized Users
+def guest_policy
+  user = users(:guest)
+  project = projects(:portfolio)
+  ProjectPolicy.new(user, project)
+end

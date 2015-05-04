@@ -9,3 +9,9 @@ vic:
   email: vic@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   role: admin
+
+guest:
+  email: test@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role:
+
