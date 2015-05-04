@@ -42,5 +42,25 @@ feature "Admin Can Edit, Delete a post" do
   end
 end
 
+feature 'Admin Edits Post' do
+  scenario 'Admin Updates and existing post' do
+    sign_in_admin
+    visit root_path
+    click_link('Edit', match: :first)
+    fill_in 'Title', with: 'My New Portfolio'
+    click_on 'Update Project'
+    page.must_have_content "My New Portfolio"
+  end
+end
+
+feature "Admin Deletes Post" do
+  scenario "Admin clicks destroy" do
+    sign_in_admin
+    visit root_path
+    click_link('Destroy', match: :first)
+    page.wont_have_content "My Portfolio"
+  end
+end
+
 
 
