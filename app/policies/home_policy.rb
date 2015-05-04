@@ -1,0 +1,2 @@
+class HomePolicy < ProjectPolicy
+end

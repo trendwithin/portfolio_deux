@@ -1,10 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    authorize @projects
   end
 
   # GET /projects/1
@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    authorize @project
   end
 
   # GET /projects/1/edit
@@ -28,6 +29,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+        authorize @project
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
@@ -42,6 +44,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
+        authorize @project
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
@@ -55,6 +58,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
+    authorize @project
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
@@ -65,6 +69,7 @@ class ProjectsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find(params[:id])
+      authorize @project
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
