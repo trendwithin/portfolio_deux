@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Todones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tasklist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todones.each do |todone| %>
+      <tr>
+        <td><%= todone.tasklist %></td>
+        <td><%= link_to 'Show', todone %></td>
+        <td><%= link_to 'Edit', edit_todone_path(todone) %></td>
+        <td><%= link_to 'Destroy', todone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todone', new_todone_path %>
