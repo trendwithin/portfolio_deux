@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tasklist:</strong>
+  <%= @todone.tasklist %>
+</p>
+
+<%= link_to 'Edit', edit_todone_path(@todone) %> |
+<%= link_to 'Back', todones_path %>

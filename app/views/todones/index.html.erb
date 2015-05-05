@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<h1>Completed Task Journal</h1>
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-xs-9 col-md-8">
+    <% @todones.each do |todone| %>
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Format Date Here</h3>
+        </div>
+        <div class="panel-body">
+          <strong>Tasks Tackled:</strong><br />
+          <%= todone.tasklist %> <br /><br />
+        </div>
+        <div class="panel-footer">
+          <%= link_to 'Show', todone if policy(todone).show? %>
+          <%= link_to 'Edit', edit_todone_path(todone) if policy(todone).edit? %>
+          <%= link_to 'Destroy', todone, method: :delete, data: { confirm: "Are you sure?" } if policy(todone).destroy? %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-xs-3 col-md-4">
+    <% if policy(Todone).new?  %>
+      <%= link_to 'New Todone', new_todone_path %>
+    <% end %>
+    <p>To-Done: <br />I've never been particularly successful with a To-D o list, so instead I'm opting to
+      trick myself with a To-Done list as motivation to keep moving forward in my web development
+      career.  Instead of tackling a list of things I've yet to do and feeling stuck, I'm instead
+      tracking what I've accomplished as a reminder of what I've done, and not what I've said I'll do.</P>
+  </div>
+</div>

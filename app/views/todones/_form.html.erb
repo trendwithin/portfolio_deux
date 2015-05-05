@@ -1,0 +1,21 @@
+<%= form_for(@todone) do |f| %>
+  <% if @todone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todone.errors.count, "error") %> prohibited this todone from being saved:</h2>
+
+      <ul>
+      <% @todone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tasklist %><br>
+    <%= f.text_area :tasklist %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

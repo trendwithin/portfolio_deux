@@ -38,3 +38,10 @@ def guest_policy
   project = projects(:portfolio)
   ProjectPolicy.new(user, project)
 end
+
+# Test TodonePolicy against Non-Authorized Users
+def guest_tasklist
+  user= users(:guest)
+  todone = todones(:today)
+  TodonePolicy.new(user, todone)
+end

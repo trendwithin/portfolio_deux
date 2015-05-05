@@ -4,8 +4,8 @@ require "test_helper"
     scenario 'Guest goes to path for new project' do
       project_policy = guest_policy
       assert !project_policy.new?
+    end
   end
-end
 
   feature 'Guest Tries to Create a Project' do
     scenario 'Guess Passes Data to Create' do
