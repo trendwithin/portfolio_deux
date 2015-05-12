@@ -4,4 +4,7 @@ class HomeController < ApplicationController
     authorize @projects
     render "projects/index"
   end
+
+  def about
+  end
 end

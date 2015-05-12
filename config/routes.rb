@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :projects
   root 'home#index'
+  get 'about' => 'home#about'
 end
