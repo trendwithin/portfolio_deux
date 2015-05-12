@@ -10,7 +10,7 @@
           <strong>Technologies Used:</strong><br />
           <%= project.technologies %> <br /><br />
           <strong>Description:</strong> <br />
-          <p><%= project.description %></p><br />
+          <p><%= project.description.html_safe %></p><br />
         </div>
         <div class="panel-footer">
           <%= link_to 'Show', project if policy(project).show? %>
@@ -24,10 +24,11 @@
     <% if policy(Project).new?  %>
       <%= link_to 'New Project', new_project_path %>
     <% end %>
-    <p>My Projects: A collection of major projects that I have completed, worked on,
-    or am in the process of developing.  A brief description of the tenhnologies used
-    as well as a general purpose description of my general role, participation, and lessons
-    learned.  For projects I am tinkering with please visit my github...</P>
+    <p><b>My Projects:</b><br/>
+    A collection of major projects that I have completed, worked on,
+    or am in the process of developing.  A brief description of the technologies used
+    as well as a general purpose description of my role, participation, and lessons
+    learned.  For projects I am tinkering with please visit my <a href="http://github.com/trendwithin">github.</a></P>
   </div>
 </div>
 
