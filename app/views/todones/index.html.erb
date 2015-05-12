@@ -10,7 +10,7 @@
         </div>
         <div class="panel-body">
           <strong>Tasks Tackled:</strong><br />
-          <%= todone.tasklist %> <br /><br />
+          <%= todone.tasklist.html_safe %> <br /><br />
         </div>
         <div class="panel-footer">
           <%= link_to 'Show', todone if policy(todone).show? %>
@@ -24,7 +24,7 @@
     <% if policy(Todone).new?  %>
       <%= link_to 'New Todone', new_todone_path %>
     <% end %>
-    <p>To-Done: <br />I've never been particularly successful with a To-D o list, so instead I'm opting to
+    <p>To-Done: <br />I've never been particularly successful with a To-Do list, so instead I'm opting to
       trick myself with a To-Done list as motivation to keep moving forward in my web development
       career.  Instead of tackling a list of things I've yet to do and feeling stuck, I'm instead
       tracking what I've accomplished as a reminder of what I've done, and not what I've said I'll do.</P>

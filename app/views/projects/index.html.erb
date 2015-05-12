@@ -10,7 +10,7 @@
           <strong>Technologies Used:</strong><br />
           <%= project.technologies %> <br /><br />
           <strong>Description:</strong> <br />
-          <p><%= project.description %></p><br />
+          <p><%= project.description.html_safe %></p><br />
         </div>
         <div class="panel-footer">
           <%= link_to 'Show', project if policy(project).show? %>
